@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		title A Twich api app
+		include ./partials/_styles.jade
+	body
+		header.header
+			h1 Get Users Twitch info
+			form.wrapper
+				input(type="text" placeholder='Search').streamerSearch
+				input(type='submit'  value="Find the streamer").findStreamer
+		div.appContainer
+			.profileImgContainer
+				.imgContainer
+					img(alt="").casterLogo
+			.infoContaienr
+				h2.displayName
+				.infoBox
+					h3.gamePlayed
+				.infoBox
+					h3.castTitle
+				.infoBox		
+					h4.views
+					h5.follows
+				.infoBox.status
+					h5.onlineStatus
+					h5.currentViewers
+					h5.fps
+					h5.url
+						a Check out their channel
+		include ./partials/_script.jade

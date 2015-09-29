@@ -1,0 +1,27 @@
+$desktop: 75.000em;
+$laptop: 62.500em;
+$tabletland: 64.000em;
+$tablet: 53.125em;
+$phablet: 37.500em;
+$mobile: 31.250em;
+
+@mixin responsive($point){
+	@if $point == desktop{
+		@media (max-width: $desktop) { @content ; }
+	}
+	@else if $point == laptop {
+		@media (max-width: $laptop) { @content ; }
+	}
+	@else if $point == tabletland {
+		@media (max-width: $tabletland) { @content ; }
+	}
+	@else if $point == tablet {
+		@media (max-width: $tablet) { @content ; }
+	}
+	@else if $point == phablet {
+		@media (max-width: $phablet) { @content ; }
+	}
+	@else if $point == mobile {
+		@media (max-width: $mobile) { @content ; }
+	}
+}

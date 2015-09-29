@@ -1,0 +1,62 @@
+//Figure out if the default fonts will be used
+$includeDefaultFontStack: true !default;
+@if $includeDefaultFontStack==true {
+    // Import Default font
+    @import url(http://fonts.googleapis.com/css?family=Raleway:400,300,600,700);
+    // Set Default font
+    $DefaultFontStack: 'Raleway', 'Helvetica', sans-serif;
+}
+// If not used Default back to sans serif
+@else {
+    $DefaultFontStack: sans-serif;
+}
+
+//Font-Weights
+$DefaultFontLight: 300 !default;
+  $DefaultFontNormal: 400 !default;
+$DefaultFontSemiBold: 600 !default;
+$DefaultFontBold: 700 !default;
+// Font Size
+// H1
+$DefaultHeaderSize: 4.375em !default;
+// H2
+$DefaultSubHeaderSize: 3.750em !default;
+// H3
+$DefaultSubHeaderSmaller:3.125em !default;
+// H4
+$DefaultSubHeaderSmall:2.500em !default;
+// H5
+$DefaultSubHeaderSmallest: 2.188em !default;
+// H6
+$DefaultSubHeaderTiny:1.875em !default;
+// Default Text Size
+$DefaultTextSize:1.250em !default;
+//Default Font Styles
+
+$defaultGlobalStack:
+(   h1 $DefaultFontStack $DefaultFontBold $DefaultHeaderSize,
+    h2 $DefaultFontStack $DefaultFontSemiBold $DefaultSubHeaderSize,
+    h3 $DefaultFontStack $DefaultFontSemiBold $DefaultSubHeaderSmall,
+    h4 $DefaultFontStack $DefaultFontSemiBold $DefaultSubHeaderSmallest,
+    h5 $DefaultFontStack $DefaultFontSemiBold $DefaultSubHeaderTiny,
+    h6 $DefaultFontStack $DefaultFontSemiBold $DefaultSubHeaderTiny,
+    p $DefaultFontStack $DefaultFontLight $DefaultTextSize,
+    a $DefaultFontStack $DefaultFontLight $DefaultTextSize,
+    span $DefaultFontStack $DefaultFontLight $DefaultTextSize,
+    li $DefaultFontStack $DefaultFontNormal $DefaultTextSize,
+    input $DefaultFontStack $DefaultFontNormal $DefaultTextSize,
+    textarea $DefaultFontStack $DefaultFontNormal $DefaultTextSize );
+
+@each $value in $defaultGlobalStack {
+    #{nth($value, 1)}{
+        font-family: nth($value, 2);
+        font-weight: nth($value, 3);
+        font-size: nth($value, 4);
+    }
+
+}
+
+$browser-context: 16; // Default
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em
+}

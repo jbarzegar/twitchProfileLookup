@@ -1,0 +1,20 @@
+/* Orbital Framework is a sass framework built off the foundation of other frameworks. 
+
+SOURCE: http://susy.oddbird.net/, 
+		https://github.com/geoffgraham/animate.scss,
+*/
+
+//This framework is designed to be modular in every sense.  
+//If you would rather not use part of this framework simply comment out the respective "@import"
+@import 'utillites/_normalize.scss';
+@import 'utillites/_clearfix.scss';
+@import 'responsive/_responsive.scss';
+// @import 'grids/_gridConfig.scss';
+@import 'typography/_typeConfig.scss';
+@import 'animations/_animate.scss';
+@import 'modal/_modal.scss';
+@import 'forms/_formPlaceholder.scss';
+
+// Bourbon modules
+@import 'modules/bourbon/_bourbon.scss';
+@import 'modules/neat/_neat.scss';

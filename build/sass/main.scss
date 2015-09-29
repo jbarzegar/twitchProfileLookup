@@ -1,0 +1,90 @@
+@import 'framework/_framework.scss';
+// Colors
+$twitchPurple: #6440a5;
+.header {
+    @include outer-container(100%);
+    @include pad(em(50));
+    background: $twitchPurple;
+    color: white;
+    text-align: center;
+    form {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+.streamerSearch,
+.findStreamer {
+    @include pad(em(7));
+    background: rgba(255, 255, 255, 0.31);
+    border: 1.5px solid #fff;
+    border-radius: 10px;
+    outline: 10px;
+    width: 68%;
+    text-align: left;
+    margin: 0;
+    float: left;
+    color: rgba(255, 255, 255, 0.41);
+}
+
+.streamerSearch {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}
+
+.findStreamer {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 30%;
+    transition: all ease 0.5s;
+    &:hover {
+        background: rgba(255, 255, 255, 0.41);
+        color: rgba(255, 255, 255, 0.51);
+    }
+}
+
+.profileImgContainer {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 50vh;
+    text-align: center;
+    .imgContainer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        img {
+            border-radius: 50% 50%;
+        }
+    }
+}
+
+.infoContaienr {
+	background: darken(#fff, 10%);
+	padding: 1px;
+	@include clearfix;
+	h2, h3 ,h4 ,h5 {
+		color: lighten($twitchPurple, 10% );
+		text-transform: capitalize;
+	}
+	.infoBox, .displayName{
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+	}
+	.displayName{
+		@include pad(em(5));
+		width: 50%;
+		margin: 0 auto;
+		text-align: center;
+		background: #fff;
+	}
+	.infoBox{
+		background: #fff;
+		@include pad(em(7));
+		@include span-columns(6 of 12);
+		margin: em(24) 0.4%;
+	}
+}
