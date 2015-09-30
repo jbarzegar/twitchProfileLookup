@@ -1,2 +1,3 @@
-gulpfile.js
-gulpScripts/
+node_modules
+deploy
+rsync_exclude.txt
