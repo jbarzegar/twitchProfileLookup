@@ -1,5 +1,5 @@
 node_modules/
-bower_componets/
+bower_components
 gulpfile.js
 gulpScripts/
 deploy
