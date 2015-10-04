@@ -15,4 +15,24 @@ gulp.task('server', function() {
     watch('./*.html').on('change', browserSync.reload);
     watch('./css/*.css').on('change', browserSync.reload);
 });
+
+// Uncss task
+gulp.task('clean', function() {
+    return gulp.src('css/main.css')
+    	.pipe(plugins.plumber({
+    	    errorHandler: plugins.notify.onError('Error: <%= error.message %>')
+    	}))
+        .pipe(plugins.uncss({
+            html: ['*.html'],
+            js: ['*.js']
+        }))
+        .pipe(plugins.csso())
+        .pipe(plugins.notify({
+            message: "Cleaned css file: <%= file.relative %> @ <%= options.date %>",
+            templateOptions: {
+                date: new Date()
+            }
+        }))
+        .pipe(gulp.dest('css/'));
+});
 gulp.task('default', ['jade', 'styles', 'server', 'imagemin', 'scripts', 'combinemq'], browserSync.relaod);

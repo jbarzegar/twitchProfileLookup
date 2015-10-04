@@ -3,33 +3,46 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>A Twich api app</title>
+    <title>A Twitch api app</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500"/>
     <link rel="stylesheet" href="./css/main.css"/>
   </head>
   <body>
     <header class="header">
-      <h1>Get Users Twitch info</h1>
-      <form class="wrapper">
-        <input type="text" placeholder="Search" class="streamerSearch"/>
-        <input type="submit" value="Find the streamer" class="findStreamer"/>
-      </form>
+      <div class="headLineContainer">
+        <h1>Grab a Streamer</h1>
+        <p>Type in one of your favourite streamers usernames</p>
+        <form class="searchWrapper">
+          <input type="text" placeholder="Search" class="streamerSearch"/>
+          <input type="submit" value="Find the streamer" class="findStreamer"/>
+        </form>
+      </div>
     </header>
+    <footer>
+      <p>This application has no affiliation with twitch | </p>
+      <p> Created by <a href="http://jamesbarzegar.com">James Barzegar </a></p>
+    </footer>
+    <div class="appError">
+      <h2>:(</h2>
+      <h2 class="errMessg"></h2>
+    </div>
     <div class="appContainer">
       <div class="profileImgContainer">
         <div class="imgContainer"><img alt="" class="casterLogo"/></div>
       </div>
-      <div class="infoContaienr">
+      <div class="infoContainer">
         <h2 class="displayName"></h2>
         <div class="infoBox">
-          <h3 class="gamePlayed"></h3>
+          <h3 class="castTitle"></h3>
         </div>
         <div class="infoBox">
-          <h3 class="castTitle"></h3>
+          <h3 class="gamePlayed"></h3>
         </div>
         <div class="infoBox">		
           <h4 class="views"></h4>
           <h5 class="follows"></h5>
+          <h5 class="subbers"></h5>
         </div>
         <div class="infoBox status">
           <h5 class="onlineStatus"></h5>
@@ -40,6 +53,6 @@
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="build/js/app.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

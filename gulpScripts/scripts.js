@@ -1,6 +1,6 @@
 module.exports = function(gulp, plugins) {
     return function() {
-        plugins.watch('./build/js/**/*js', function() {
+        plugins.watch('./build/js/**/*.js', function() {
             gulp.src('./build/js/**/*.js')
                 .pipe(plugins.plumber())
                 .pipe(plugins.uglify())
