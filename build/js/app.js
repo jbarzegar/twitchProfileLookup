@@ -37,7 +37,7 @@ kyT.getUser = function() {
         dataType: 'jsonp',
         success: function(response) {
             console.log('response: ' + response.stream);
-            if ( response.status === 404 || response.status === 422) {
+            if (response.status === 404 || response.status === 422) {
                 $('.appContainer').fadeOut(500);
                 $('.appError').fadeIn(500);
                 $('.appError .errMessg').text('Oh no! Something went wrong: ' + response.message + '.');
@@ -81,14 +81,18 @@ kyT.showUser = function(status) {
 //  Step two: print stuff into respective html elements
 kyT.getStreamerDetails = function(status, onlineStatus) {
     // Define online Status var will be given value depending on response 
-    if (status !== null) {
+    console.log(status.stream);
+    if (status.stream === null) {
         onlineStatus = 'Streamer is Offline';
         $('.url').hide();
+        $('.fps').hide();
         console.log(status);
+
     } else {
         onlineStatus = 'Streamer is Online';
+        $('.url').show();
         $('.url a').attr('href', status.stream.channel.url);
-        $('.fps').text('Average Fps: ' + status.stream.average_fps.toFixed(2));
+        $('.fps').show().text('Average Fps: ' + status.stream.average_fps.toFixed(2));
     }
     $('.onlineStatus').text(onlineStatus);
 
