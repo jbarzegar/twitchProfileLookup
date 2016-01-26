@@ -20,7 +20,7 @@ streamerInput.on('keyup change', function() {
     streamer = streamerInput.val().toLowerCase();
 });
 
-// When searching call getUser 
+// When searching call getUser
 kyT.findStreamer = function() {
     $('form').on('submit form', function(e) {
         e.preventDefault();
@@ -28,7 +28,7 @@ kyT.findStreamer = function() {
         kyT.getStreamStatus(streamer);
     });
 };
-// Step one: include api via ajax 
+// Step one: include api via ajax
 kyT.getUser = function() {
     console.log(streamer);
     $.ajax({
@@ -80,7 +80,7 @@ kyT.showUser = function(status) {
 };
 //  Step two: print stuff into respective html elements
 kyT.getStreamerDetails = function(status, onlineStatus) {
-    // Define online Status var will be given value depending on response 
+    // Define online Status var will be given value depending on response
     console.log(status.stream);
     if (status.stream === null) {
         onlineStatus = 'Streamer is Offline';
