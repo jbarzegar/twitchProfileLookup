@@ -2,5 +2,5 @@ deploy
 rsync_exclude.txt
 node_modules/
 bower_components/
-.sublime-gulp-cache
+.sublime-gulp.cache
 .DS_Store
