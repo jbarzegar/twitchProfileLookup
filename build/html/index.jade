@@ -11,12 +11,12 @@ html(lang="en")
 				h1 Grab a Streamer
 				p Type in one of your favourite streamers usernames
 				form.searchWrapper
-					input(type="text" placeholder='Search').streamerSearch
+					input(type="text" placeholder='Eg: skinnedteen, enigma905').streamerSearch
 					input(type='submit'  value="Find the streamer").findStreamer
 		footer
-			p This application has no affiliation with twitch | 
-			p  Created by 
-				a(href="http://jamesbarzegar.com") James Barzegar 
+			p This application has no affiliation with twitch |
+			p  Created by
+				a(href="http://jamesbarzegar.com") James Barzegar
 		div.appError
 			h2 :(
 			h2.errMessg
@@ -30,7 +30,7 @@ html(lang="en")
 					h3.castTitle
 				.infoBox
 					h3.gamePlayed
-				.infoBox		
+				.infoBox
 					h4.views
 					h5.follows
 					h5.subbers
@@ -40,5 +40,4 @@ html(lang="en")
 					h5.fps
 					h5.url
 						a Check out their channel
-
 		include ./partials/_script.jade
