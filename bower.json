@@ -1,0 +1,23 @@
+{
+  "name": "twitchProfileLookup",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jbarzegar/twitchProfileLookup",
+  "authors": [
+    "James Barzegar <james.barzegar@gmail.com>"
+  ],
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5"
+  }
+}

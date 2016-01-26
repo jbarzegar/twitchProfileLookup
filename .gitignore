@@ -5,3 +5,5 @@ gulpScripts/
 deploy
 rsync_exclude.txt
 build/
+.sublime-gulp.cache
+.DS_Store
